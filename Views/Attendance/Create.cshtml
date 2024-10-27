@@ -1,0 +1,19 @@
+﻿@model WebApplication1.Models.Attendance
+
+<form asp-action="Create">
+    <div class="form-group">
+        <label asp-for="EmployeeId" class="control-label">Employee</label>
+        <select asp-for="EmployeeId" class="form-control" asp-items="@(new SelectList(ViewBag.Employees, "Id", "FirstName"))">
+            <option value="">Select Employee</option>
+        </select>
+    </div>
+    <div class="form-group">
+        <label asp-for="CheckInTime" class="control-label"></label>
+        <input asp-for="CheckInTime" class="form-control" />
+    </div>
+    <div class="form-group">
+        <label asp-for="CheckOutTime" class="control-label"></label>
+        <input asp-for="CheckOutTime" class="form-control" />
+    </div>
+    <button type="submit" class="btn btn-primary">Submit</button>
+</form>
