@@ -48,14 +48,9 @@ namespace WebApplication1.Controllers
             public IActionResult Create()
             {
                 var employees = _context.Employees
-                    .Select(e => new
-                    {
-                        Id = e.Id,
-                        FullName = e.FirstName + " " + e.LastName // Concatenating first and last name
-                    })
                     .ToList();
 
-                ViewBag.Employees = new SelectList(employees, "Id", "FullName");
+                ViewBag.Employees = employees;
                 return View();
             }
 
